@@ -2,8 +2,6 @@
 
 
 <html>
-	<body>
-
 	<head>
 		<meta name="Nosso número - Boletos" charset="UTF-8">
 
@@ -12,8 +10,18 @@
 			  width: 100%;
 			}
 		</style>
+	</head>
 
-		<script>
+	<body>
+			<!--Boleto details-->
+			linDig 03399.54349 <input type="text" name="lDigitavel" value=""/><p/><button onclick="barrrasParaNNumero()">Nosso Número</button>
+			<hr/>
+			<!--cdBarra-->
+			cdBarra shorter number <input type="text" name="lDigitavelCdBarra" value=""/><p/><button onclick="cdBarra()">cdBarra</button>
+			<hr/>
+			Nosso Número/Acquirer Reference<input type="text" name="nnumero" value=""/><p/>
+
+		<script type="application/javascript">
 			function barrrasParaNNumero(){
                 
                 //take out all spaces
@@ -40,18 +48,8 @@
 
 				barrrasParaNNumero();
             }
-		</script>		
-	</head>
-
-	<body>
-			<!--Boleto details-->
-			linDig 03399.54349 <input type="text" name="lDigitavel" value=""/><p/><button onclick="barrrasParaNNumero()">Nosso Número</button>
-			<hr/>
-			<!--cdBarra-->
-			cdBarra shorter number <input type="text" name="lDigitavelCdBarra" value=""/><p/><button onclick="cdBarra()">cdBarra</button>
-			<hr/>
-			Nosso Número/Acquirer Reference<input type="text" name="nnumero" value=""/><p/>
-
+		</script>
+		
 	</body>
 </html>
 
