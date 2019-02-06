@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+
+<html>
+	<body>
+
+	<head>
+		<meta name="Nosso número - Boletos" charset="UTF-8">
+
+		<style type="text/css" media="screen">
+			input {
+			  width: 100%;
+			}
+		</style>
+
+		<script>
+			function barrrasParaNNumero(){
+                
+                //take out all spaces
+                var barras = document.getElementsByName("lDigitavel")[0].value;
+                barras = barras.replace(/\s+/g, '');
+                barras = barras.replace(/\./g, '');
+                //show without spaces
+                document.getElementsByName("lDigitavel")[0].setAttribute("value", barras);
+                //slice and format nosso número
+                barras = barras.slice(13,27);
+                barras = barras.substring(0,7) + barras.substring(8,13)+"-" + barras.substring(13);
+                document.getElementsByName("nnumero")[0].setAttribute("value", barras);
+            }
+
+            function cdBarra(){
+                //take out all spaces
+                var barras = document.getElementsByName("lDigitavelCdBarra")[0].value;
+                barras = barras.replace(/\s+/g, '');
+                barras = barras.replace(/\./g, '');
+				
+				barras = barras.substring(0, 4) + '9.' + barras.substring(20, 24) + '9 ' + barras.substring(24, 29) + '.' + barras.substring(29, 34) + '9 ' + barras.substring(34, 39) + '.' + barras.substring(39, 44) + '9 ' + barras.substring(4, 5) + ' ' + barras.substring(5, 19);
+				
+				document.getElementsByName("lDigitavel")[0].setAttribute("value", barras);
+
+				barrrasParaNNumero();
+            }
+		</script>		
+	</head>
+
+	<body>
+			<!--Boleto details-->
+			linDig 03399.54349 <input type="text" name="lDigitavel" value=""/><p/><button onclick="barrrasParaNNumero()">Nosso Número</button>
+			<hr/>
+			<!--cdBarra-->
+			cdBarra shorter number <input type="text" name="lDigitavelCdBarra" value=""/><p/><button onclick="cdBarra()">cdBarra</button>
+			<hr/>
+			Nosso Número/Acquirer Reference<input type="text" name="nnumero" value=""/><p/>
+
+	</body>
+</html>
+
